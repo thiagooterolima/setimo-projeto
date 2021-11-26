@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE html
+        PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xml:lang="en"
+      lang="en">
+
+<f:metadata>
+    <f:viewAction action="#{estadoBean.novo}" />
+</f:metadata>
+
+<h:head>
+    <title>Estado</title>
+</h:head>
+
+<h:body>
+    <h:form>
+
+        <ui:include src="menu2.xhtml"/>
+
+
+        <p:breadCrumb>
+            <p:menuitem value="Home "/>
+            <p:menuitem value="Cadastros"/>
+            <p:menuitem value="Estado"/>
+            <p:menuitem value="Novo"/>
+        </p:breadCrumb>
+        <p:card>
+
+            <p:messages closable="true">
+                <p:autoUpdate />
+            </p:messages>
+
+            <h:panelGrid columns="1">
+
+                <p:inputText value="#{estadoBean.estado.nome}" placeholder="Nome">
+                    <p:autoUpdate />
+                </p:inputText>
+
+                <p:inputText value="#{estadoBean.estado.sigla}" placeholder="Sigla">
+                    <p:autoUpdate />
+                </p:inputText>
+
+            </h:panelGrid>
+
+            <h:panelGrid columns="1">
+                <p:commandButton value="Salvar" actionListener="#{estadoBean.salvar}" icon="pi pi-save"/>
+            </h:panelGrid>
+        </p:card>
+    </h:form>
+</h:body>
+
+</html>
